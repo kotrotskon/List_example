@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] colors = {"Black", "Red", "Blue", "Green", "Yellow", "Orange", "Pink", "Brown"};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.item, colors);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.item, R.id.textView, colors);
 
         listView.setAdapter(adapter);
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                TextView txtVw = (TextView) view;
+                TextView txtVw = (TextView) view.findViewById(R.id.textView);
                 Log.d("ITEM_CLICK", txtVw.getText().toString());
             }
         });
